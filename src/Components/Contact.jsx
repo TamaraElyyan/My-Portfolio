@@ -10,10 +10,10 @@ const Contact = () => {
 
     emailjs
       .sendForm(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+        'service_ngjcrf4', 
+        'template_u8y0azb', 
         form.current,
-        'YOUR_USER_ID' // Replace with your EmailJS user ID
+        'GioKnTKLRGtlsD-DI' 
       )
       .then(
         (result) => {
