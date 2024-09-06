@@ -38,9 +38,9 @@ Ensure you have the following installed on your computer:
 2. Navigate into the project directory:
 cd portidilio
 
-3.Install dependencies:
+3. Install dependencies:
 npm install
 
-4.Running the Project
+4. Running the Project
 To start the project on your local machine:
 npm start
