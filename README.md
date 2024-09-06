@@ -34,6 +34,7 @@ Ensure you have the following installed on your computer:
 
    ```bash
    git clone https://github.com/TamaraElyyan/My-Portfolio
+   
 2. Navigate into the project directory:
 cd portidilio
 
