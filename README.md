@@ -1,6 +1,6 @@
-# Portidilio
+# Portfolio
 
-Portidilio is a portfolio website template built with modern web technologies. It's designed to help developers, designers, and freelancers showcase their work in a clean and professional way. This project is fully responsive and customizable, making it a great starting point for personal portfolio websites.
+Portfolio is a portfolio website template built with modern web technologies. It's designed to help developers, designers, and freelancers showcase their work in a clean and professional way. This project is fully responsive and customizable, making it a great starting point for personal portfolio websites.
 
 ## Features
 
@@ -19,7 +19,7 @@ Portidilio is a portfolio website template built with modern web technologies. I
 
 ## Getting Started
 
-Follow these instructions to set up and run Portidilio on your local machine.
+Follow these instructions to set up and run Portfolio on your local machine.
 
 ### Prerequisites
 
@@ -36,7 +36,7 @@ Ensure you have the following installed on your computer:
    git clone https://github.com/TamaraElyyan/My-Portfolio
    
 2. Navigate into the project directory:
-cd portidilio
+cd My-Portfolio
 
 3. Install dependencies:
 npm install
