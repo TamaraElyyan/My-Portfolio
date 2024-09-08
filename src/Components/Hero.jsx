@@ -21,12 +21,12 @@ const Hero = () => {
             Contact Me
           </a>
           <a
-            href="../../public/My CV.pdf" 
-            className="bg-gray-800 text-white py-3 px-8 rounded-full shadow-lg hover:opacity-90 transition-opacity"
-            download // This attribute triggers the download
-          >
-            Download CV
-          </a>
+  href="/My CV.pdf"
+  className="bg-gray-800 text-white py-3 px-8 rounded-full shadow-lg hover:opacity-90 transition-opacity"
+  download
+>
+  Download CV
+</a>
         </div>
       </div>
     </section>
