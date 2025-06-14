@@ -45,21 +45,7 @@ export function ProjectsSection() {
       ],
       featured: false,
       fullWidth: true
-    },
-    {
-        title: "Resume Ranker for HR",
-        description: "An intelligent HR tool that automatically ranks and evaluates resumes based on job requirements. Built with React.js for the frontend and Express.js for the backend, featuring AI-powered matching algorithms, batch processing capabilities, and comprehensive analytics dashboard for HR professionals.",
-        image: "https://images.unsplash.com/photo-1515378791036-0648a3677b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
-        technologies: ["React.js", "Express.js", "Node.js", "OpenAI"],
-        features: [
-          "AI-powered resume analysis",
-          "Batch processing & ranking",
-          "Skills matching algorithms",
-          "Interactive analytics dashboard"
-        ],
-        featured: true,
-        fullWidth: true
-      }
+    }
   ];
 
   return (

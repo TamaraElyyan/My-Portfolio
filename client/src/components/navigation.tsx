@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useTheme } from "@/components/theme-provider";
-import { Moon, Sun, Menu, Code2 } from "lucide-react";
+import { Moon, Sun, Menu } from "lucide-react";
 
 export function Navigation() {
   const [location] = useLocation();
@@ -55,8 +55,6 @@ export function Navigation() {
                 {item.label}
               </button>
             ))}
-            
-            
 
             <Button
               variant="ghost"
@@ -97,16 +95,6 @@ export function Navigation() {
                       {item.label}
                     </button>
                   ))}
-                  
-                  {showResumeRanker && (
-                    <Link 
-                      href="/resume-ranker" 
-                      className="flex items-center gap-2 hover:text-primary transition-colors"
-                    >
-                      <Code2 className="h-4 w-4" />
-                      Resume Ranker
-                    </Link>
-                  )}
                 </div>
               </SheetContent>
             </Sheet>
