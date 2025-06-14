@@ -1,7 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github, Star } from "lucide-react";
+import { 
+  Star, 
+  ExternalLink, 
+  Github, 
+  Code2, 
+  Database, 
+  Wifi, 
+  Globe, 
+  Cpu,
+  Lightbulb,
+  Shield,
+  BarChart3
+} from "lucide-react";
 import { Link } from "wouter";
 
 export function ProjectsSection() {
@@ -33,7 +45,21 @@ export function ProjectsSection() {
       ],
       featured: false,
       fullWidth: true
-    }
+    },
+    {
+        title: "Resume Ranker for HR",
+        description: "An intelligent HR tool that automatically ranks and evaluates resumes based on job requirements. Built with React.js for the frontend and Express.js for the backend, featuring AI-powered matching algorithms, batch processing capabilities, and comprehensive analytics dashboard for HR professionals.",
+        image: "https://images.unsplash.com/photo-1515378791036-0648a3677b2a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+        technologies: ["React.js", "Express.js", "Node.js", "OpenAI"],
+        features: [
+          "AI-powered resume analysis",
+          "Batch processing & ranking",
+          "Skills matching algorithms",
+          "Interactive analytics dashboard"
+        ],
+        featured: true,
+        fullWidth: true
+      }
   ];
 
   return (
@@ -47,59 +73,6 @@ export function ProjectsSection() {
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8">
-          {/* Resume Ranker Project (Featured) */}
-          <Card className="lg:col-span-2 bg-gradient-to-br from-blue-50 to-emerald-50 dark:from-muted dark:to-card border-2 border-primary/20 animate-slide-up">
-            <CardContent className="p-8">
-              <div className="flex items-center mb-4">
-                <div className="bg-primary text-primary-foreground p-3 rounded-lg mr-4">
-                  <Star className="h-6 w-6" />
-                </div>
-                <div>
-                  <h3 className="text-2xl font-bold">Resume Ranker for HR</h3>
-                  <Badge variant="secondary" className="mt-1">Featured Project</Badge>
-                </div>
-              </div>
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                An intelligent HR tool that automatically ranks and evaluates resumes based on job requirements. 
-                Built with React.js for the frontend and Express.js for the backend, featuring AI-powered matching algorithms, 
-                batch processing capabilities, and comprehensive analytics dashboard for HR professionals.
-              </p>
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <h4 className="font-semibold mb-2">Key Features:</h4>
-                  <ul className="text-sm text-muted-foreground space-y-1">
-                    <li>• AI-powered resume analysis</li>
-                    <li>• Batch processing & ranking</li>
-                    <li>• Skills matching algorithms</li>
-                    <li>• Interactive analytics dashboard</li>
-                  </ul>
-                </div>
-                <div>
-                  <h4 className="font-semibold mb-2">Tech Stack:</h4>
-                  <div className="flex flex-wrap gap-2">
-                    <Badge variant="outline">React.js</Badge>
-                    <Badge variant="outline">Express.js</Badge>
-                    <Badge variant="outline">Node.js</Badge>
-                    <Badge variant="outline">OpenAI</Badge>
-                  </div>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <Link href="/resume-ranker">
-                  <Button className="shadow-lg">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Try Demo
-                  </Button>
-                </Link>
-                <Button variant="outline">
-                  <Github className="mr-2 h-4 w-4" />
-                  View Code
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-
-          {/* Other Projects */}
           {projects.map((project, index) => (
             <Card 
               key={index} 

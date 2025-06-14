@@ -45,12 +45,19 @@ export function HeroSection() {
           >
             Get In Touch
           </Button>
-          <Link href="/resume-ranker">
-            <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 shadow-lg">
-              <Download className="mr-2 h-4 w-4" />
-              Try Resume Ranker
-            </Button>
-          </Link>
+          <Button 
+            variant="outline" 
+            size="lg"
+            onClick={() => {
+              const element = document.getElementById("contact");
+              if (element) {
+                element.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+          >
+            <Download className="mr-2 h-4 w-4" />
+            Download CV
+          </Button>
         </div>
         <div className="flex justify-center space-x-6">
           <a 

@@ -5,11 +5,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useTheme } from "@/components/theme-provider";
 import { Moon, Sun, Menu, Code2 } from "lucide-react";
 
-interface NavigationProps {
-  showResumeRanker?: boolean;
-}
-
-export function Navigation({ showResumeRanker = false }: NavigationProps) {
+export function Navigation() {
   const [location] = useLocation();
   const { theme, setTheme } = useTheme();
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,15 +56,7 @@ export function Navigation({ showResumeRanker = false }: NavigationProps) {
               </button>
             ))}
             
-            {showResumeRanker && (
-              <Link 
-                href="/resume-ranker" 
-                className="flex items-center gap-2 hover:text-primary transition-colors"
-              >
-                <Code2 className="h-4 w-4" />
-                Resume Ranker
-              </Link>
-            )}
+            
 
             <Button
               variant="ghost"

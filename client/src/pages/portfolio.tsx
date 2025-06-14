@@ -9,7 +9,7 @@ import { Footer } from "@/components/footer";
 export default function Portfolio() {
   return (
     <div className="min-h-screen">
-      <Navigation showResumeRanker={true} />
+      <Navigation />
       <HeroSection />
       <AboutSection />
       <SkillsSection />
