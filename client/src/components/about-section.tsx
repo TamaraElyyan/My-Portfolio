@@ -14,7 +14,6 @@ export function AboutSection() {
           </p>
         </div>
         <div className="grid grid-cols-1 gap-12 items-center justify-center">
-          {/* مكان الصورة ممكن تضيفه لاحقاً */}
           <div className="animate-slide-up text-center max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold mb-6">My Journey</h3>
             <p className="text-muted-foreground mb-6 leading-relaxed">

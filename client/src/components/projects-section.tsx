@@ -2,6 +2,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Star, ExternalLink, Github } from "lucide-react";
+import LibraryImage from "../../assets/LibraryImage.png";
+import FitFinderImage from "../../assets/fitfinder.png";
+import TravelImage from "../../assets/travel&booking.png";
+import YallaShabab from "../../assets/yallashabab.png";
 
 export function ProjectsSection() {
   const projects = [
@@ -9,8 +13,8 @@ export function ProjectsSection() {
       title: "My Dream Place - Travel & Booking Website",
       description:
         "Responsive travel booking platform with interactive UI, search functionality, and booking management system.",
-      image:
-        "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
+      image: TravelImage,
+
       technologies: [
         "React.js",
         "Tailwind CSS",
@@ -26,9 +30,14 @@ export function ProjectsSection() {
       title: "Book Library E-commerce",
       description:
         "Full-stack e-commerce platform for book sales with REST APIs, user authentication, and payment integration.",
-      image:
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300",
-      technologies: ["React.js", "Express.js", "REST API"],
+      image: LibraryImage,
+      technologies: [
+        "React.js",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "REST API",
+      ],
       demoUrl: "https://demo.booklibrary.com",
       codeUrl: "https://github.com/TamaraElyyan/library_store",
       featured: false,
@@ -37,8 +46,8 @@ export function ProjectsSection() {
       title: "YALLA SHABAB - Event Management Website",
       description:
         "Comprehensive event management platform with Spring Boot backend and React.js frontend, featuring event creation, registration, and management capabilities.",
-      image:
-        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      image: YallaShabab,
+
       technologies: ["React.js", "Spring Boot", "Tailwind", "REST API"],
       demoUrl: "https://demo.yallashabab.com",
       codeUrl: "https://github.com/Israa-Mousa/event-website",
@@ -55,8 +64,8 @@ export function ProjectsSection() {
       title: "FitFinder – Resume Ranker",
       description:
         "AI-powered resume analysis tool that ranks candidate profiles based on job descriptions using NLP and keyword matching.",
-      image:
-        "https://images.unsplash.com/photo-1600267165477-3c4d8e9286e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400",
+      image: FitFinderImage,
+
       technologies: ["Flask API", "React", "TypeScript", "Next.js"],
       demoUrl: "https://demo.fitfinder.com",
       codeUrl: "https://github.com/TamaraElyyan/FitFinder2",
