@@ -57,13 +57,15 @@ export function SkillsSection() {
     },
   ];
 
-  const certifications = [
-    "CCNA - Cisco",
-    "AWS Services",
-    "Automation Anywhere RPA",
-    "Full Stack Development",
-    "React.js",
-  ];
+  // const certifications = [
+  //   "CCNA - Cisco",
+  //   "AWS Services",
+  //   "Automation Anywhere RPA",
+  //   "Full Stack Development",
+  //   "React.js",
+  //   "JavaScript",
+  //   "Spring Boot",
+  // ];
 
   return (
     <section id="skills" className="py-20 bg-muted/50">
@@ -109,7 +111,7 @@ export function SkillsSection() {
           ))}
         </div>
 
-        <div className="text-center animate-slide-up">
+        {/* <div className="text-center animate-slide-up">
           <h3 className="text-2xl font-bold mb-8">Certifications</h3>
           <div className="flex flex-wrap justify-center gap-4">
             {certifications.map((cert, index) => (
@@ -122,7 +124,7 @@ export function SkillsSection() {
               </Badge>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
