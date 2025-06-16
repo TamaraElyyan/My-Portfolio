@@ -73,9 +73,7 @@ export function ProjectsSection() {
 
   return (
     <section id="projects" className="py-20 bg-background">
-      {/* Container */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section title and subtitle */}
         <div className="text-center mb-16 animate-slide-up">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
             Featured Projects
@@ -86,7 +84,6 @@ export function ProjectsSection() {
           </p>
         </div>
 
-        {/* Projects grid */}
         <div className="grid lg:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <Card
@@ -95,8 +92,7 @@ export function ProjectsSection() {
                 project.fullWidth ? "lg:col-span-2" : ""
               }`}
             >
-              <CardContent className={project.fullWidth ? "p-6" : "p-6"}>
-                {/* Project image */}
+              <CardContent className="p-6">
                 <img
                   src={project.image}
                   alt={project.title}
@@ -107,7 +103,6 @@ export function ProjectsSection() {
 
                 {project.fullWidth ? (
                   <div className="grid md:grid-cols-2 gap-6">
-                    {/* Left side: title, description, technologies */}
                     <div>
                       <h3 className="text-xl font-bold mb-2">
                         {project.title}
@@ -124,7 +119,6 @@ export function ProjectsSection() {
                       </div>
                     </div>
 
-                    {/* Right side: features list and buttons */}
                     <div className="flex flex-col justify-between">
                       {project.features && (
                         <div>
@@ -137,37 +131,32 @@ export function ProjectsSection() {
                         </div>
                       )}
                       <div className="flex gap-2">
-                        {/* Demo button linking to demoUrl */}
-                        <Button
-                          variant="secondary"
-                          className="flex-1"
-                          as="a"
-                          href={project.demoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="mr-1 h-4 w-4" />
-                          Demo
+                        <Button variant="secondary" className="flex-1" asChild>
+                          <a
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="mr-1 h-4 w-4" />
+                            Demo
+                          </a>
                         </Button>
 
-                        {/* Code button linking to codeUrl */}
-                        <Button
-                          variant="outline"
-                          className="flex-1"
-                          as="a"
-                          href={project.codeUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <Github className="mr-1 h-4 w-4" />
-                          Code
+                        <Button variant="outline" className="flex-1" asChild>
+                          <a
+                            href={project.codeUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Github className="mr-1 h-4 w-4" />
+                            Code
+                          </a>
                         </Button>
                       </div>
                     </div>
                   </div>
                 ) : (
                   <>
-                    {/* Smaller project card layout */}
                     <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                     <p className="text-muted-foreground mb-4 text-sm">
                       {project.description}
@@ -184,32 +173,36 @@ export function ProjectsSection() {
                       ))}
                     </div>
                     <div className="flex gap-2">
-                      {/* Demo button */}
                       <Button
                         variant="secondary"
                         size="sm"
                         className="flex-1"
-                        as="a"
-                        href={project.demoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        asChild
                       >
-                        <ExternalLink className="mr-1 h-3 w-3" />
-                        Demo
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="mr-1 h-3 w-3" />
+                          Demo
+                        </a>
                       </Button>
 
-                      {/* Code button */}
                       <Button
                         variant="outline"
                         size="sm"
                         className="flex-1"
-                        as="a"
-                        href={project.codeUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                        asChild
                       >
-                        <Github className="mr-1 h-3 w-3" />
-                        Code
+                        <a
+                          href={project.codeUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="mr-1 h-3 w-3" />
+                          Code
+                        </a>
                       </Button>
                     </div>
                   </>

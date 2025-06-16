@@ -1,13 +1,12 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { useMutation } from "@tanstack/react-query";
 import { Mail, Phone, MapPin, Linkedin, Github, Send } from "lucide-react";
-import { apiRequest } from "@/lib/queryClient";
 
 export function ContactSection() {
   const { toast } = useToast();
@@ -16,39 +15,20 @@ export function ContactSection() {
     lastName: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
 
-  const contactMutation = useMutation({
-    mutationFn: (data: typeof formData) => 
-      apiRequest("POST", "/api/contact", data),
-    onSuccess: () => {
-      toast({
-        title: "Message sent successfully!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setFormData({
-        firstName: "",
-        lastName: "",
-        email: "",
-        subject: "",
-        message: ""
-      });
-    },
-    onError: (error) => {
-      toast({
-        title: "Error sending message",
-        description: error.message,
-        variant: "destructive",
-      });
-    },
-  });
+  const [isSending, setIsSending] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
-    // Basic validation
-    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+
+    if (
+      !formData.firstName ||
+      !formData.lastName ||
+      !formData.email ||
+      !formData.message
+    ) {
       toast({
         title: "Please fill in all required fields",
         variant: "destructive",
@@ -56,13 +36,50 @@ export function ContactSection() {
       return;
     }
 
-    contactMutation.mutate(formData);
+    setIsSending(true);
+
+    try {
+      await emailjs.send(
+        "service_ngjcrf4",
+        "template_omxptae",
+        {
+          from_name: `${formData.firstName} ${formData.lastName}`,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        "GioKnTKLRGtlsD-DI"
+      );
+
+      toast({
+        title: "Message sent successfully!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+    } catch (error: any) {
+      toast({
+        title: "Error sending message",
+        description: error.text || "Something went wrong.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -70,9 +87,12 @@ export function ContactSection() {
     <section id="contact" className="py-20 bg-muted/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Let's Work Together</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
+            Let's Work Together
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to bring your ideas to life? Let's discuss how we can collaborate on your next project.
+            Ready to bring your ideas to life? Let's discuss how we can
+            collaborate on your next project.
           </p>
         </div>
 
@@ -87,7 +107,9 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="font-medium">Email</p>
-                  <p className="text-muted-foreground">TamaraElyyan1@gmail.com</p>
+                  <p className="text-muted-foreground">
+                    TamaraElyyan1@gmail.com
+                  </p>
                 </div>
               </div>
               <div className="flex items-center">
@@ -113,20 +135,24 @@ export function ContactSection() {
             <div className="mt-8">
               <h4 className="font-semibold mb-4">Connect With Me</h4>
               <div className="flex space-x-4">
-                <a 
-                  href="#" 
+                <a
+                  href="https://www.linkedin.com/in/tamara-elyyan/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground p-3 rounded-lg transition-colors"
                 >
                   <Linkedin className="h-5 w-5" />
                 </a>
-                <a 
-                  href="#" 
+                <a
+                  href="https://github.com/TamaraElyyan"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-foreground hover:bg-foreground/90 text-background p-3 rounded-lg transition-colors"
                 >
                   <Github className="h-5 w-5" />
                 </a>
-                <a 
-                  href="mailto:TamaraElyyan1@gmail.com" 
+                <a
+                  href="mailto:TamaraElyyan1@gmail.com"
                   className="bg-red-600 hover:bg-red-700 text-white p-3 rounded-lg transition-colors"
                 >
                   <Mail className="h-5 w-5" />
@@ -198,12 +224,8 @@ export function ContactSection() {
                     required
                   />
                 </div>
-                <Button 
-                  type="submit" 
-                  className="w-full" 
-                  disabled={contactMutation.isPending}
-                >
-                  {contactMutation.isPending ? (
+                <Button type="submit" className="w-full" disabled={isSending}>
+                  {isSending ? (
                     "Sending..."
                   ) : (
                     <>
