@@ -1,164 +1,108 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Star, ExternalLink, Github } from "lucide-react";
-import LibraryImage from "../../assets/LibraryImage.png";
-import FitFinderImage from "../../assets/fitfinder.png";
-import TravelImage from "../../assets/travel&booking.png";
-import YallaShabab from "../../assets/yallashabab.png";
+import { ExternalLink, Github } from "lucide-react";
+import { projects } from "@/data/projects";
 
 export function ProjectsSection() {
-  const projects = [
-    {
-      title: "My Dream Place - Travel & Booking Website",
-      description:
-        "Responsive travel booking platform with interactive UI, search functionality, and booking management system.",
-      image: TravelImage,
-
-      technologies: [
-        "React.js",
-        "Tailwind CSS",
-        "Tailwind",
-        "REST API",
-        "axios",
-      ],
-      demoUrl: "https://demo.mydreamplace.com",
-      codeUrl: "https://github.com/TamaraElyyan/Travel-Booking-Website",
-      featured: false,
-    },
-    {
-      title: "Book Library E-commerce",
-      description:
-        "Full-stack e-commerce platform for book sales with REST APIs, user authentication, and payment integration.",
-      image: LibraryImage,
-      technologies: [
-        "React.js",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "REST API",
-      ],
-      demoUrl: "https://demo.booklibrary.com",
-      codeUrl: "https://github.com/TamaraElyyan/library_store",
-      featured: false,
-    },
-    {
-      title: "YALLA SHABAB - Event Management Website",
-      description:
-        "Comprehensive event management platform with Spring Boot backend and React.js frontend, featuring event creation, registration, and management capabilities.",
-      image: YallaShabab,
-
-      technologies: ["React.js", "Spring Boot", "Tailwind", "REST API"],
-      demoUrl: "https://demo.yallashabab.com",
-      codeUrl: "https://github.com/Israa-Mousa/event-website",
-      features: [
-        "Event creation and management",
-        "User registration system",
-        "Real-time notifications",
-        "Admin dashboard",
-      ],
-      featured: false,
-      fullWidth: false,
-    },
-    {
-      title: "FitFinder – Resume Ranker",
-      description:
-        "AI-powered resume analysis tool that ranks candidate profiles based on job descriptions using NLP and keyword matching.",
-      image: FitFinderImage,
-
-      technologies: ["Flask API", "React", "TypeScript", "Next.js"],
-      demoUrl: "https://demo.fitfinder.com",
-      codeUrl: "https://github.com/TamaraElyyan/FitFinder2",
-      features: [
-        "Resume parsing and keyword extraction",
-        "Job matching score calculator",
-        "RESTful Flask backend",
-        "Modern React + Next.js frontend",
-      ],
-      featured: false,
-      fullWidth: false,
-    },
-  ];
-
   return (
-    <section id="projects" className="py-20 bg-background">
+    <section id="projects" className="py-20 md:py-28 section-shell">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16 animate-slide-up">
+        <Reveal>
+        <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            Featured Projects
+            Projects
           </h2>
-          <p className="text-lg text-muted-foreground">
-            Showcasing innovative solutions that demonstrate technical expertise
-            and problem-solving abilities
+          <p className="text-lg text-slate-300 max-w-2xl mx-auto px-2">
+            Selected builds spanning React, full-stack Node, Spring Boot, and a
+            Flask + Next.js tool—code and READMEs on GitHub.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-10 justify-items-center lg:justify-items-stretch">
           {projects.map((project, index) => (
             <Card
               key={index}
-              className={`hover:shadow-xl transition-shadow animate-slide-up ${
+              className={`glass-card rounded-3xl hover:-translate-y-2 transition-all duration-300 ease-out w-full max-w-lg lg:max-w-none ${
                 project.fullWidth ? "lg:col-span-2" : ""
               }`}
             >
-              <CardContent className="p-6">
+              <CardContent className="p-6 text-center lg:text-left">
                 <img
                   src={project.image}
-                  alt={project.title}
+                  alt={`Screenshot of ${project.title}`}
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 1024px) min(50vw, 42rem), 100vw"
                   className={`w-full object-cover rounded-lg mb-4 ${
                     project.fullWidth ? "h-64" : "h-48"
                   }`}
                 />
 
                 {project.fullWidth ? (
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-6 text-center md:text-left">
                     <div>
-                      <h3 className="text-xl font-bold mb-2">
+                      <h3 className="text-xl font-bold mb-2 text-slate-100">
                         {project.title}
                       </h3>
-                      <p className="text-muted-foreground mb-4">
+                      <p className="text-slate-300 mb-4">
                         {project.description}
                       </p>
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="flex flex-wrap gap-2 mb-4 justify-center md:justify-start">
                         {project.technologies.map((tech, techIndex) => (
-                          <Badge key={techIndex} variant="secondary">
+                          <Badge
+                            key={techIndex}
+                            variant="secondary"
+                            className="bg-[#ebe4df] text-[#22223b] border border-[#c9ada7]/55 dark:bg-[#09090b] dark:text-[#f2e9e4] dark:border-[#3f3f46]"
+                          >
                             {tech}
                           </Badge>
                         ))}
                       </div>
                     </div>
 
-                    <div className="flex flex-col justify-between">
+                    <div className="flex flex-col justify-between text-center md:text-left">
                       {project.features && (
                         <div>
-                          <h4 className="font-semibold mb-2">Features:</h4>
-                          <ul className="text-sm text-muted-foreground space-y-1 mb-4">
+                          <h4 className="font-semibold mb-2 text-slate-200">Features:</h4>
+                          <ul className="text-sm text-slate-300 space-y-1 mb-4">
                             {project.features.map((feature, featureIndex) => (
                               <li key={featureIndex}>• {feature}</li>
                             ))}
                           </ul>
                         </div>
                       )}
-                      <div className="flex gap-2">
-                        <Button variant="secondary" className="flex-1" asChild>
-                          <a
-                            href={project.demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                      <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto md:max-w-none md:mx-0">
+                        {project.demoUrl ? (
+                          <Button
+                            variant="secondary"
+                            className="w-full sm:flex-1 bg-[#4a4e69] text-[#f2e9e4] hover:bg-[#3a3d52] shadow-[0_0_20px_rgba(74,78,105,0.25)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(74,78,105,0.4)] active:scale-[0.98]"
+                            asChild
                           >
-                            <ExternalLink className="mr-1 h-4 w-4" />
-                            Demo
-                          </a>
-                        </Button>
+                            <a
+                              href={project.demoUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              <ExternalLink className="mr-1 h-4 w-4" />
+                              Live demo
+                            </a>
+                          </Button>
+                        ) : null}
 
-                        <Button variant="outline" className="flex-1" asChild>
+                        <Button
+                          variant="outline"
+                          className="w-full sm:flex-1 border-[#4a4e69]/50 text-[#4a4e69] dark:text-white/85 hover:bg-[#4a4e69]/10 dark:hover:text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-[#4a4e69] active:scale-[0.98]"
+                          asChild
+                        >
                           <a
                             href={project.codeUrl}
                             target="_blank"
                             rel="noopener noreferrer"
                           >
                             <Github className="mr-1 h-4 w-4" />
-                            Code
+                            Code &amp; README
                           </a>
                         </Button>
                       </div>
@@ -166,42 +110,44 @@ export function ProjectsSection() {
                   </div>
                 ) : (
                   <>
-                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                    <p className="text-muted-foreground mb-4 text-sm">
+                    <h3 className="text-xl font-bold mb-2 text-slate-100">{project.title}</h3>
+                    <p className="text-slate-300 mb-4 text-sm">
                       {project.description}
                     </p>
-                    <div className="flex flex-wrap gap-2 mb-4">
+                    <div className="flex flex-wrap gap-2 mb-4 justify-center lg:justify-start">
                       {project.technologies.map((tech, techIndex) => (
                         <Badge
                           key={techIndex}
                           variant="secondary"
-                          className="text-xs"
+                          className="text-xs bg-[#ebe4df] text-[#22223b] border border-[#c9ada7]/55 dark:bg-[#09090b] dark:text-[#f2e9e4] dark:border-[#3f3f46]"
                         >
                           {tech}
                         </Badge>
                       ))}
                     </div>
-                    <div className="flex gap-2">
-                      <Button
-                        variant="secondary"
-                        size="sm"
-                        className="flex-1"
-                        asChild
-                      >
-                        <a
-                          href={project.demoUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                    <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto lg:max-w-none lg:mx-0">
+                      {project.demoUrl ? (
+                        <Button
+                          variant="secondary"
+                          size="sm"
+                          className="w-full sm:flex-1 bg-[#4a4e69] text-[#f2e9e4] hover:bg-[#3a3d52] shadow-[0_0_20px_rgba(74,78,105,0.25)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(74,78,105,0.4)] active:scale-[0.98]"
+                          asChild
                         >
-                          <ExternalLink className="mr-1 h-3 w-3" />
-                          Demo
-                        </a>
-                      </Button>
+                          <a
+                            href={project.demoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="mr-1 h-3 w-3" />
+                            Live demo
+                          </a>
+                        </Button>
+                      ) : null}
 
                       <Button
                         variant="outline"
                         size="sm"
-                        className="flex-1"
+                        className="w-full sm:flex-1 border-[#4a4e69]/50 text-[#4a4e69] dark:text-white/85 hover:bg-[#4a4e69]/10 dark:hover:text-white transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-[#4a4e69] active:scale-[0.98]"
                         asChild
                       >
                         <a
@@ -210,7 +156,7 @@ export function ProjectsSection() {
                           rel="noopener noreferrer"
                         >
                           <Github className="mr-1 h-3 w-3" />
-                          Code
+                          Code &amp; README
                         </a>
                       </Button>
                     </div>
@@ -220,6 +166,7 @@ export function ProjectsSection() {
             </Card>
           ))}
         </div>
+        </Reveal>
       </div>
     </section>
   );

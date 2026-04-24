@@ -79,10 +79,21 @@ export default {
             height: "0",
           },
         },
+        "cert-pill-in": {
+          from: {
+            opacity: "0",
+            transform: "translateY(12px) scale(0.97)",
+          },
+          to: {
+            opacity: "1",
+            transform: "translateY(0) scale(1)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "cert-pill-in": "cert-pill-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both",
       },
     },
   },

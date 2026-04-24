@@ -21,7 +21,7 @@ function App() {
   return (
     <Router hook={useHashLocation}>
       <QueryClientProvider client={queryClient}>
-        <ThemeProvider>
+        <ThemeProvider defaultTheme="dark">
           <TooltipProvider>
             <Toaster />
             <RouterComponent />
