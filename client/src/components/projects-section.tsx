@@ -12,12 +12,19 @@ export function ProjectsSection() {
         <Reveal>
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">
-            Projects
+            Selected projects
           </h2>
-          <p className="text-lg text-slate-300 max-w-2xl mx-auto px-2">
-            Selected builds spanning React, full-stack Node, Spring Boot, and a
-            Flask + Next.js tool—code and READMEs on GitHub.
-          </p>
+          <div className="max-w-2xl mx-auto px-2 space-y-4 text-lg text-slate-300 leading-relaxed">
+            <p>
+              Here are some of the projects I&apos;ve built, showcasing my
+              experience in full-stack development, UI/UX design, and real-world
+              problem solving.
+            </p>
+            <p>
+              Each project reflects my approach to building scalable,
+              user-focused applications using modern technologies.
+            </p>
+          </div>
         </div>
 
         <div className="grid lg:grid-cols-2 gap-8 md:gap-10 justify-items-center lg:justify-items-stretch">

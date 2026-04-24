@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Download, MessageCircle } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import personalImage from "../../assets/personalimage.jpg";
 import { scrollToSectionId } from "@/lib/scroll";
 
@@ -16,14 +16,14 @@ export function HeroSection() {
     >
       <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-[#ebe4df] dark:from-zinc-950 dark:to-black dark:opacity-100 pointer-events-none" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-36 pb-20 md:pb-28">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-28 pb-20 md:pb-28">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center justify-items-center lg:justify-items-stretch">
           <div className="animate-fade-up-soft order-2 lg:order-1 w-full max-w-xl lg:max-w-none text-center lg:text-left">
             <p
-              className="text-sm font-semibold tracking-[0.25em] uppercase text-[#4a4e69] dark:text-white/95 mb-4"
+              className="text-sm font-semibold tracking-[0.2em] uppercase text-[#4a4e69] dark:text-white/95 mb-4"
               style={{ animationDelay: "0ms" }}
             >
-              Hello!
+              React · Next.js · TypeScript · Express
             </p>
 
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-2">
@@ -37,34 +37,41 @@ export function HeroSection() {
             </h1>
 
             <p className="text-lg md:text-xl font-medium text-[#4a4e69] dark:text-white mt-2 mb-6">
-              Frontend &amp; full-stack developer
+              Full-Stack Developer (Frontend-focused)
             </p>
 
             <p className="text-base md:text-lg text-[#3d3d4a]/95 dark:text-white/90 max-w-lg mx-auto lg:mx-0 leading-relaxed mb-8">
-              React.js and Next.js for production UIs—API integration, performance
-              tuning, and accessible components—with a network-engineering background
-              from PS Core work at Ooredoo Palestine.
+              I ship production UIs and the APIs behind them—dashboards, commerce
+              flows, and event platforms—then harden them for performance and clarity.
+              Telecom core work at Ooredoo taught me how reliable systems behave under
+              pressure; today that shows up in how I build the web.
             </p>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 mb-10">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 mb-10">
               <Button
                 type="button"
-                onClick={() => scrollToSectionId("contact")}
+                onClick={() => scrollToSectionId("projects")}
                 className="w-full max-w-xs sm:w-fit rounded-full px-8 py-6 text-base font-semibold border-0 bg-[#4a4e69] text-[#f2e9e4] dark:text-white hover:bg-[#3a3d52] dark:hover:bg-[#5a5f7a] shadow-[0_0_28px_rgba(74,78,105,0.45)] dark:shadow-[0_0_32px_rgba(74,78,105,0.55)] transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(74,78,105,0.55)] dark:hover:shadow-[0_0_44px_rgba(74,78,105,0.65)] active:translate-y-0 active:scale-[0.98]"
               >
-                <MessageCircle className="mr-2 h-4 w-4" />
-                Let&apos;s talk
+                <ArrowRight className="mr-2 h-4 w-4" />
+                Explore my work
               </Button>
-              <a
-                href={cvHref}
-                download="Tamara-Elyyan-CV.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border-2 border-[#4a4e69]/45 px-5 py-2.5 text-sm font-medium text-[#4a4e69] dark:text-white transition-all duration-300 ease-out hover:border-[#4a4e69] hover:bg-white/50 hover:text-[#22223b] dark:border-[#c9ada7]/50 dark:hover:border-[#c9ada7] dark:hover:bg-white/10 dark:hover:text-white"
+              <Button
+                variant="outline"
+                asChild
+                className="w-full max-w-xs sm:w-fit rounded-full px-8 py-6 text-base font-semibold border-2 border-[#4a4e69]/45 text-[#4a4e69] dark:border-[#c9ada7]/50 dark:text-white hover:bg-white/60 dark:hover:bg-white/10 transition-all duration-300 ease-out hover:-translate-y-0.5 active:scale-[0.98]"
               >
-                <Download className="h-4 w-4" />
-                Download CV
-              </a>
+                <a
+                  href={cvHref}
+                  download="Tamara-Elyyan-CV.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2"
+                >
+                  <Download className="h-4 w-4" />
+                  Download CV
+                </a>
+              </Button>
             </div>
           </div>
 

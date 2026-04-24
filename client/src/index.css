@@ -96,6 +96,17 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Fixed navbar: in-page anchors land below the bar */
+  main section[id] {
+    scroll-margin-top: 4rem;
+  }
+
+  @media (min-width: 768px) {
+    main section[id] {
+      scroll-margin-top: 4.25rem;
+    }
+  }
 }
 
 @layer utilities {

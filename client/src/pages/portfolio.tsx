@@ -12,7 +12,7 @@ export default function Portfolio() {
     <div className="min-h-screen bg-background text-foreground">
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-[#4a4e69] focus:px-4 focus:py-2 focus:text-[#f2e9e4]"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-20 focus:z-[100] focus:rounded-md focus:bg-[#4a4e69] focus:px-4 focus:py-2 focus:text-[#f2e9e4]"
       >
         Skip to main content
       </a>
@@ -20,9 +20,9 @@ export default function Portfolio() {
       <main id="main-content">
         <HeroSection />
         <AboutSection />
+        <ProjectsSection />
         <SkillsSection />
         <CertificationsSection />
-        <ProjectsSection />
         <ContactSection />
       </main>
       <Footer />

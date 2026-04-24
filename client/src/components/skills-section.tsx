@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Reveal } from "@/components/reveal";
-import { Progress } from "@/components/ui/progress";
 import { skillCategories } from "@/data/skills";
 
 export function SkillsSection() {
@@ -13,8 +13,8 @@ export function SkillsSection() {
             Skills & Expertise
           </h2>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto px-2">
-            Comprehensive technical skills across full-stack development and
-            network engineering
+            Stack I use in production-style work—frontend-led, with backend and
+            infrastructure when the problem needs it.
           </p>
         </div>
 
@@ -29,19 +29,15 @@ export function SkillsSection() {
                   <category.icon className="h-8 w-8" />
                 </div>
                 <h3 className="text-xl font-bold mb-4 text-slate-100">{category.title}</h3>
-                <div className="space-y-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex}>
-                      <div className="flex justify-between mb-1">
-                        <span className="text-sm font-medium text-neutral-900 dark:text-white">
-                          {skill.name}
-                        </span>
-                        <span className="text-sm text-neutral-700 dark:text-white/90 tabular-nums">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      <Progress value={skill.level} className="h-2.5 bg-[#e0d9d4] dark:bg-[#4a4e69]/50" />
-                    </div>
+                <div className="flex flex-wrap justify-center lg:justify-start gap-2">
+                  {category.skills.map((name) => (
+                    <Badge
+                      key={name}
+                      variant="secondary"
+                      className="text-xs font-medium bg-[#ebe4df] text-[#22223b] border border-[#c9ada7]/55 dark:bg-[#09090b] dark:text-[#f2e9e4] dark:border-[#3f3f46]"
+                    >
+                      {name}
+                    </Badge>
                   ))}
                 </div>
               </CardContent>

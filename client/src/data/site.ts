@@ -8,8 +8,8 @@ export type PrimaryNavItem = {
 export const primaryNavItems: PrimaryNavItem[] = [
   { label: "Home", sectionId: "home", href: "#home" },
   { label: "About", sectionId: "about", href: "#about" },
+  { label: "Projects", sectionId: "projects", href: "#projects" },
   { label: "Skills", sectionId: "skills", href: "#skills" },
-  { label: "Portfolio", sectionId: "projects", href: "#projects" },
   { label: "Contact", sectionId: "contact", href: "#contact" },
 ];
 
@@ -17,8 +17,8 @@ export type FooterQuickLink = { label: string; sectionId: string };
 
 export const footerQuickNavItems: FooterQuickLink[] = [
   { label: "About", sectionId: "about" },
-  { label: "Skills", sectionId: "skills" },
   { label: "Projects", sectionId: "projects" },
+  { label: "Skills", sectionId: "skills" },
   { label: "Contact", sectionId: "contact" },
 ];
 

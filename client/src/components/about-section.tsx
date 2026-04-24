@@ -33,17 +33,18 @@ export function AboutSection() {
               About Me
             </h2>
             <p className="text-slate-300 mb-6 leading-relaxed">
-              B.Sc. in Communication Engineering (Al-Quds University). I combine
-              telecom and systems thinking with modern web delivery—Next.js and
-              React on the frontend, Express and Spring Boot where the problem
-              needs a solid API and data layer.
+              I lead with the interface—React and Next.js, Tailwind, and tight
+              product UX—then go deep where the stack demands it: Node/Express,
+              Spring Boot, and data-backed APIs. B.Sc. Communication Engineering
+              (Al-Quds); I treat every screen like part of a system, not a one-off
+              mockup.
             </p>
             <p className="text-slate-300 mb-6 leading-relaxed">
-              From optimizing PS Core at Ooredoo Palestine and technical support
-              at the Engineers Association, to part-time frontend work at Swapmoq,
-              the Amana full-stack bootcamp, and volunteer UI work on Forsa
-              Khadra—I care about shipping interfaces that behave well in
-              production, not just in demos.
+              Production work at Swapmoq; volunteer UI for Forsa Khadra; intensive
+              full-stack training with Amana. Before that, PS Core optimization at
+              Ooredoo Palestine and enterprise support at the Engineers
+              Association—experience that shows up as calmer releases, clearer
+              handoffs, and interfaces that still work after launch day.
             </p>
 
             <div
