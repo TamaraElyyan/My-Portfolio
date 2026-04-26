@@ -3,7 +3,47 @@ import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
-import { projects } from "@/data/projects";
+import { PENDING_DEMO, projects, type Project } from "@/data/projects";
+
+const demoButtonClass =
+  "w-full sm:flex-1 bg-[#4a4e69] text-[#f2e9e4] hover:bg-[#3a3d52] shadow-[0_0_20px_rgba(74,78,105,0.25)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(74,78,105,0.4)] active:scale-[0.98]";
+
+function LiveDemoAction({ project, size = "sm" }: { project: Project; size?: "sm" | "default" }) {
+  const pending = project.demoUrl === PENDING_DEMO;
+  const iconClass = size === "sm" ? "mr-1 h-3 w-3" : "mr-1 h-4 w-4";
+  const cls = demoButtonClass;
+
+  if (pending) {
+    return (
+      <Button
+        type="button"
+        variant="secondary"
+        size={size}
+        disabled
+        className={`${cls} cursor-not-allowed opacity-50 grayscale-[0.15]`}
+        title="رابط الـ live قريباً"
+        aria-label="Live demo: link not added yet"
+      >
+        <ExternalLink className={iconClass} />
+        Live demo
+      </Button>
+    );
+  }
+
+  return (
+    <Button
+      variant="secondary"
+      size={size}
+      className={cls}
+      asChild
+    >
+      <a href={project.demoUrl} target="_blank" rel="noopener noreferrer">
+        <ExternalLink className={iconClass} />
+        Live demo
+      </a>
+    </Button>
+  );
+}
 
 export function ProjectsSection() {
   return (
@@ -81,22 +121,7 @@ export function ProjectsSection() {
                         </div>
                       )}
                       <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto md:max-w-none md:mx-0">
-                        {project.demoUrl ? (
-                          <Button
-                            variant="secondary"
-                            className="w-full sm:flex-1 bg-[#4a4e69] text-[#f2e9e4] hover:bg-[#3a3d52] shadow-[0_0_20px_rgba(74,78,105,0.25)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(74,78,105,0.4)] active:scale-[0.98]"
-                            asChild
-                          >
-                            <a
-                              href={project.demoUrl}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              <ExternalLink className="mr-1 h-4 w-4" />
-                              Live demo
-                            </a>
-                          </Button>
-                        ) : null}
+                        <LiveDemoAction project={project} size="default" />
 
                         <Button
                           variant="outline"
@@ -133,23 +158,7 @@ export function ProjectsSection() {
                       ))}
                     </div>
                     <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto lg:max-w-none lg:mx-0">
-                      {project.demoUrl ? (
-                        <Button
-                          variant="secondary"
-                          size="sm"
-                          className="w-full sm:flex-1 bg-[#4a4e69] text-[#f2e9e4] hover:bg-[#3a3d52] shadow-[0_0_20px_rgba(74,78,105,0.25)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(74,78,105,0.4)] active:scale-[0.98]"
-                          asChild
-                        >
-                          <a
-                            href={project.demoUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="mr-1 h-3 w-3" />
-                            Live demo
-                          </a>
-                        </Button>
-                      ) : null}
+                      <LiveDemoAction project={project} size="sm" />
 
                       <Button
                         variant="outline"
