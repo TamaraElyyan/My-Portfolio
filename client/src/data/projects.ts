@@ -1,5 +1,5 @@
 import HealthHubImage from "../../assets/healthhub.png";
-import LibraryImage from "../../assets/LibraryImage.png";
+import BookBazaarImage from "../../assets/book-bazaar.png";
 import FitFinderImage from "../../assets/fitfinder.png";
 import TravelImage from "../../assets/travel&booking.png";
 import YallaShabab from "../../assets/yallashabab.png";
@@ -42,13 +42,13 @@ export const projects: Project[] = [
     featured: false,
   },
   {
-    title: "Book Library – E-commerce Platform",
+    title: "BOOK BAZZAR – E-commerce Bookstore",
     description:
-      "Full-stack bookstore: Express REST APIs for catalog and orders, MongoDB persistence, and a React UI for browsing, cart, and checkout.",
-    image: LibraryImage,
+      "Full-stack bookstore: Express REST APIs for catalog and orders, MongoDB persistence, and a React UI (EN/AR) for browsing, cart, and checkout.",
+    image: BookBazaarImage,
     technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "REST API"],
     demoUrl: PENDING_DEMO,
-    codeUrl: "https://github.com/TamaraElyyan/library_store",
+    codeUrl: "https://github.com/TamaraElyyan/Ecommerce-App",
     featured: false,
   },
   {
