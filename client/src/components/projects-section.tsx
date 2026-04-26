@@ -71,24 +71,24 @@ export function ProjectsSection() {
           {projects.map((project, index) => (
             <Card
               key={index}
-              className={`glass-card rounded-3xl hover:-translate-y-2 transition-all duration-300 ease-out w-full max-w-lg lg:max-w-none ${
+              className={`glass-card flex h-full min-h-0 w-full max-w-lg flex-col rounded-3xl transition-all duration-300 ease-out hover:-translate-y-2 lg:max-w-none ${
                 project.fullWidth ? "lg:col-span-2" : ""
               }`}
             >
-              <CardContent className="p-6 text-center lg:text-left">
+              <CardContent className="flex h-full min-h-0 flex-col p-6 text-center lg:text-left">
                 <img
                   src={project.image}
                   alt={`Screenshot of ${project.title}`}
                   loading="lazy"
                   decoding="async"
                   sizes="(min-width: 1024px) min(50vw, 42rem), 100vw"
-                  className={`w-full object-cover rounded-lg mb-4 ${
+                  className={`mb-4 w-full shrink-0 object-cover rounded-lg ${
                     project.fullWidth ? "h-64" : "h-48"
                   }`}
                 />
 
                 {project.fullWidth ? (
-                  <div className="grid md:grid-cols-2 gap-6 text-center md:text-left">
+                  <div className="grid min-h-0 flex-1 auto-rows-auto gap-6 text-center md:grid-cols-2 md:text-left">
                     <div>
                       <h3 className="text-xl font-bold mb-2 text-slate-100">
                         {project.title}
@@ -142,22 +142,26 @@ export function ProjectsSection() {
                   </div>
                 ) : (
                   <>
-                    <h3 className="text-xl font-bold mb-2 text-slate-100">{project.title}</h3>
-                    <p className="text-slate-300 mb-4 text-sm">
-                      {project.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-4 justify-center lg:justify-start">
-                      {project.technologies.map((tech, techIndex) => (
-                        <Badge
-                          key={techIndex}
-                          variant="secondary"
-                          className="text-xs bg-[#ebe4df] text-[#22223b] border border-[#c9ada7]/55 dark:bg-[#09090b] dark:text-[#f2e9e4] dark:border-[#3f3f46]"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
+                    <div className="flex min-h-0 flex-1 flex-col">
+                      <h3 className="mb-2 shrink-0 text-xl font-bold text-slate-100">
+                        {project.title}
+                      </h3>
+                      <p className="mb-4 text-sm text-slate-300">
+                        {project.description}
+                      </p>
+                      <div className="mb-0 flex flex-wrap justify-center gap-2 lg:justify-start">
+                        {project.technologies.map((tech, techIndex) => (
+                          <Badge
+                            key={techIndex}
+                            variant="secondary"
+                            className="text-xs bg-[#ebe4df] text-[#22223b] border border-[#c9ada7]/55 dark:bg-[#09090b] dark:text-[#f2e9e4] dark:border-[#3f3f46]"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                    <div className="flex flex-col sm:flex-row gap-2 max-w-md mx-auto lg:max-w-none lg:mx-0">
+                    <div className="mt-auto flex w-full max-w-md flex-col gap-2 pt-4 sm:flex-row mx-auto sm:mx-0 lg:max-w-none">
                       <LiveDemoAction project={project} size="sm" />
 
                       <Button
