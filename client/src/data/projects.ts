@@ -47,7 +47,7 @@ export const projects: Project[] = [
       "Full-stack bookstore: Express REST APIs for catalog and orders, MongoDB persistence, and a React UI (EN/AR) for browsing, cart, and checkout.",
     image: BookBazaarImage,
     technologies: ["React.js", "Node.js", "Express.js", "MongoDB", "REST API"],
-    demoUrl: PENDING_DEMO,
+    demoUrl: "https://book-bazaar-web.onrender.com",
     codeUrl: "https://github.com/TamaraElyyan/Ecommerce-App",
     featured: false,
   },
