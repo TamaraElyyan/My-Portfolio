@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink, Github } from "lucide-react";
 import { PENDING_DEMO, projects, type Project } from "@/data/projects";
+import { cn } from "@/lib/utils";
 
 const demoButtonClass =
   "w-full sm:flex-1 bg-[#4a4e69] text-[#f2e9e4] hover:bg-[#3a3d52] shadow-[0_0_20px_rgba(74,78,105,0.25)] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_0_28px_rgba(74,78,105,0.4)] active:scale-[0.98]";
@@ -82,9 +83,11 @@ export function ProjectsSection() {
                   loading="lazy"
                   decoding="async"
                   sizes="(min-width: 1024px) min(50vw, 42rem), 100vw"
-                  className={`mb-4 w-full shrink-0 object-cover rounded-lg ${
-                    project.fullWidth ? "h-64" : "h-48"
-                  }`}
+                  className={cn(
+                    "mb-4 w-full shrink-0 object-cover rounded-lg",
+                    project.fullWidth ? "h-64" : "h-48",
+                    project.imageCoverPosition,
+                  )}
                 />
 
                 {project.fullWidth ? (

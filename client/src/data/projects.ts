@@ -3,6 +3,7 @@ import BookBazaarImage from "../../assets/book-bazaar.png";
 import FitFinderImage from "../../assets/fitfinder.png";
 import TravelImage from "../../assets/travel&booking.png";
 import YallaShabab from "../../assets/yallashabab.png";
+import ForasKhadraImage from "../../assets/foras-khadra.png";
 
 /** Placeholder until a real live URL is provided (UI shows a disabled Live demo button). */
 export const PENDING_DEMO = "__PENDING_DEMO__";
@@ -18,6 +19,8 @@ export type Project = {
   featured?: boolean;
   fullWidth?: boolean;
   features?: string[];
+  /** Crop focus for thumbnail (Tailwind object-position helpers), e.g. `object-[center_65%]`. */
+  imageCoverPosition?: string;
 };
 
 export const projects: Project[] = [
@@ -84,5 +87,16 @@ export const projects: Project[] = [
     ],
     featured: false,
     fullWidth: false,
+  },
+  {
+    title: "Foras Khadra (فرص خضراء) – Green Opportunities",
+    description:
+      "Volunteer frontend development for an Arabic RTL nonprofit platform that connects Arab youth with environmental and climate opportunities and grants worldwide. Built layouts and interactions with semantic HTML, CSS, and JavaScript alongside the team codebase.",
+    image: ForasKhadraImage,
+    technologies: ["HTML", "CSS", "JavaScript", "Responsive UI"],
+    demoUrl: "https://foraskhadra.com/",
+    codeUrl: "https://github.com/aya2000-allan/Foras_Khadra__",
+    featured: false,
+    imageCoverPosition: "object-[center_68%]",
   },
 ];

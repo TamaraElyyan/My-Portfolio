@@ -1,8 +1,8 @@
 import { Briefcase } from "lucide-react";
 import { Reveal } from "@/components/reveal";
 
-/** April 1, 2024 — anchor date for displayed tenure (updates automatically). */
-const experienceAnchor = new Date(2024, 3, 1);
+/** January 1, 2022 — anchor date for displayed tenure (updates automatically). */
+const experienceAnchor = new Date(2022, 0, 1);
 
 /** Full calendar years elapsed since anchor (same month/day rule as age). */
 function fullYearsSince(start: Date, now = new Date()): number {
