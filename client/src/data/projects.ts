@@ -97,6 +97,7 @@ export const projects: Project[] = [
     demoUrl: "https://foraskhadra.com/",
     codeUrl: "https://github.com/aya2000-allan/Foras_Khadra__",
     featured: false,
-    imageCoverPosition: "object-[center_68%]",
+    /** Pin top so heading/nav aren’t clipped (object-cover h-48). */
+    imageCoverPosition: "object-top",
   },
 ];
