@@ -1,9 +1,10 @@
-import HealthHubImage from "../../assets/healthhub.png";
-import BookBazaarImage from "../../assets/book-bazaar.png";
-import FitFinderImage from "../../assets/fitfinder.png";
-import TravelImage from "../../assets/travel&booking.png";
-import YallaShabab from "../../assets/yallashabab.png";
-import ForasKhadraImage from "../../assets/foras-khadra.png";
+import HealthHubImage from "../../assets/healthhub-cover.svg";
+import BookBazaarImage from "../../assets/book-bazaar-cover.svg";
+import FitFinderImage from "../../assets/fitfinder-cover.svg";
+import TravelImage from "../../assets/travel-cover.svg";
+import YallaShabab from "../../assets/yalla-shabab-cover.svg";
+import ForasKhadraImage from "../../assets/foras-khadra-cover.svg";
+import LeeCooperImage from "../../assets/lee-cooper-cover.svg";
 
 /** Placeholder until a real live URL is provided (UI shows a disabled Live demo button). */
 export const PENDING_DEMO = "__PENDING_DEMO__";
@@ -97,7 +98,15 @@ export const projects: Project[] = [
     demoUrl: "https://foraskhadra.com/",
     codeUrl: "https://github.com/aya2000-allan/Foras_Khadra__",
     featured: false,
-    /** Pin top so heading/nav aren’t clipped (object-cover h-48). */
-    imageCoverPosition: "object-top",
+  },
+  {
+    title: "Lee Cooper-style E-commerce Website",
+    description:
+      "Full-stack fashion e-commerce platform in the style of Lee Cooper: product catalog, cart, guest checkout, wishlist, and order tracking for customers, plus a full admin dashboard for products, inventory, orders, and sales stats. React + TypeScript frontend with Clerk auth and EN/AR i18n, backed by an Express API on PostgreSQL (Drizzle ORM).",
+    image: LeeCooperImage,
+    technologies: ["React", "TypeScript", "Express.js", "PostgreSQL", "Drizzle ORM", "Tailwind CSS"],
+    demoUrl: PENDING_DEMO,
+    codeUrl: "https://github.com/TamaraElyyan/Lee-Cooper-style-E-commerce-Website",
+    featured: false,
   },
 ];

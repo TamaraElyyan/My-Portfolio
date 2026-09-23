@@ -104,8 +104,8 @@ export function HeroSection() {
                     width={384}
                     height={384}
                     decoding="async"
-                    fetchPriority="high"
                     className="w-full h-full object-cover object-[center_15%] sm:object-center scale-[1.02]"
+                    {...{ fetchpriority: "high" } as React.ImgHTMLAttributes<HTMLImageElement>}
                   />
                 </div>
               </div>

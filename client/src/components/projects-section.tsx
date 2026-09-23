@@ -77,18 +77,24 @@ export function ProjectsSection() {
               }`}
             >
               <CardContent className="flex h-full min-h-0 flex-col p-6 text-center lg:text-left">
-                <img
-                  src={project.image}
-                  alt={`Screenshot of ${project.title}`}
-                  loading="lazy"
-                  decoding="async"
-                  sizes="(min-width: 1024px) min(50vw, 42rem), 100vw"
+                <div
                   className={cn(
-                    "mb-4 w-full shrink-0 object-cover rounded-lg",
-                    project.fullWidth ? "h-64" : "h-48",
-                    project.imageCoverPosition,
+                    "mb-4 w-full shrink-0 overflow-hidden rounded-lg bg-muted aspect-video",
+                    project.fullWidth && "lg:aspect-[2/1]",
                   )}
-                />
+                >
+                  <img
+                    src={project.image}
+                    alt={`Screenshot of ${project.title}`}
+                    loading="lazy"
+                    decoding="async"
+                    sizes="(min-width: 1024px) min(50vw, 42rem), 100vw"
+                    className={cn(
+                      "h-full w-full object-contain",
+                      project.imageCoverPosition,
+                    )}
+                  />
+                </div>
 
                 {project.fullWidth ? (
                   <div className="grid min-h-0 flex-1 auto-rows-auto gap-6 text-center md:grid-cols-2 md:text-left">

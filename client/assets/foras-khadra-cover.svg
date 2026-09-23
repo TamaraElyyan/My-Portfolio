@@ -1,0 +1,38 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22223b"/>
+      <stop offset="1" stop-color="#4a4e69"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.2" r="0.65">
+      <stop offset="0" stop-color="#4ade80" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#4ade80" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" rx="28" fill="url(#bg)"/>
+  <rect width="800" height="450" rx="28" fill="url(#glow)"/>
+
+  <circle cx="36" cy="36" r="6" fill="#f2e9e4" opacity="0.35"/>
+  <circle cx="58" cy="36" r="6" fill="#f2e9e4" opacity="0.25"/>
+  <circle cx="80" cy="36" r="6" fill="#f2e9e4" opacity="0.15"/>
+
+  <!-- globe -->
+  <circle cx="360" cy="210" r="100" fill="none" stroke="#4ade80" stroke-width="5" opacity="0.8"/>
+  <ellipse cx="360" cy="210" rx="42" ry="100" fill="none" stroke="#4ade80" stroke-width="3" opacity="0.5"/>
+  <ellipse cx="360" cy="210" rx="100" ry="42" fill="none" stroke="#4ade80" stroke-width="3" opacity="0.5"/>
+  <line x1="260" y1="210" x2="460" y2="210" stroke="#4ade80" stroke-width="3" opacity="0.5"/>
+
+  <!-- leaf/sprout growing from globe -->
+  <path d="M360 150 C 330 120 340 80 375 65 C 385 105 375 135 360 150 Z" fill="#4ade80"/>
+  <path d="M360 150 C 390 130 420 140 430 175 C 395 185 370 175 360 150 Z" fill="#86efac"/>
+
+  <!-- growth arrow -->
+  <g stroke="#f2e9e4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.85">
+    <polyline points="510,290 555,250 590,275 630,220"/>
+    <polyline points="600,220 630,220 630,250"/>
+  </g>
+
+  <text x="40" y="390" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#f2e9e4">Foras Khadra</text>
+  <text x="40" y="414" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="2" fill="#4ade80">GREEN OPPORTUNITIES</text>
+</svg>

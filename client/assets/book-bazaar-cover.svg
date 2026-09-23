@@ -1,0 +1,43 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22223b"/>
+      <stop offset="1" stop-color="#4a4e69"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.8" cy="0.2" r="0.65">
+      <stop offset="0" stop-color="#f6ad55" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#f6ad55" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" rx="28" fill="url(#bg)"/>
+  <rect width="800" height="450" rx="28" fill="url(#glow)"/>
+
+  <circle cx="36" cy="36" r="6" fill="#f2e9e4" opacity="0.35"/>
+  <circle cx="58" cy="36" r="6" fill="#f2e9e4" opacity="0.25"/>
+  <circle cx="80" cy="36" r="6" fill="#f2e9e4" opacity="0.15"/>
+
+  <!-- open book -->
+  <path d="M400 130 C 340 105 280 105 260 120 L260 270 C 280 255 340 255 400 280 Z" fill="#f2e9e4" opacity="0.9"/>
+  <path d="M400 130 C 460 105 520 105 540 120 L540 270 C 520 255 460 255 400 280 Z" fill="#f2e9e4" opacity="0.75"/>
+  <line x1="400" y1="130" x2="400" y2="280" stroke="#22223b" stroke-width="3" opacity="0.35"/>
+
+  <line x1="285" y1="150" x2="375" y2="168" stroke="#c9ada7" stroke-width="4" opacity="0.6"/>
+  <line x1="285" y1="172" x2="375" y2="190" stroke="#c9ada7" stroke-width="4" opacity="0.6"/>
+  <line x1="285" y1="194" x2="360" y2="210" stroke="#c9ada7" stroke-width="4" opacity="0.6"/>
+
+  <line x1="425" y1="168" x2="515" y2="150" stroke="#c9ada7" stroke-width="4" opacity="0.6"/>
+  <line x1="425" y1="190" x2="515" y2="172" stroke="#c9ada7" stroke-width="4" opacity="0.6"/>
+  <line x1="440" y1="210" x2="515" y2="194" stroke="#c9ada7" stroke-width="4" opacity="0.6"/>
+
+  <!-- shopping cart badge -->
+  <g transform="translate(500,255)">
+    <circle cx="40" cy="40" r="42" fill="#f6ad55"/>
+    <path d="M18 20 h8 l6 34 h30 l8 -24 h-40" fill="none" stroke="#22223b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="32" cy="60" r="4" fill="#22223b"/>
+    <circle cx="56" cy="60" r="4" fill="#22223b"/>
+  </g>
+
+  <text x="40" y="390" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#f2e9e4">BOOK BAZZAR</text>
+  <text x="40" y="414" font-family="Arial, Helvetica, sans-serif" font-size="14" letter-spacing="2" fill="#f6ad55">E-COMMERCE BOOKSTORE</text>
+</svg>
